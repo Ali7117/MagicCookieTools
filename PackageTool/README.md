@@ -11,6 +11,9 @@
 ##### 第三步: 双击 启动补丁工具.bat 即可进行打包, 会弹出 DOS 窗口, 用于监测执行信息
 
 
+##### 最终结果如图:
+![Image text](https://github.com/Ali7117/MagicCookieTools/blob/master/System-Img/PackageTool-001.png)
+
 ##
 ##### 如若发现补丁工具中有不足之处, 请留言 指正 ! Thanks!
 #### 如若发现补丁工具中有不足之处, 请留言 指正 ! Thanks! 
