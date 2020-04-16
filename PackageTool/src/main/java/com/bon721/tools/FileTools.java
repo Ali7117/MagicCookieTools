@@ -239,13 +239,22 @@ public class FileTools {
      */
     public static void copyFileListPro() throws Exception {
 
-        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(filelistName);
+        File file = null;
+        FileInputStream systemResourceAsStream = null;
+
+        //InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(filelistName);
+        file = new File(currentPath + File.separator + filelistName);
+
+        if (!file.exists()) {
+            throw new Exception("=======    补丁清单 filelist.properties 文件不存在    ========");
+        }
+        systemResourceAsStream = new FileInputStream(file);
         if (systemResourceAsStream == null) {
             throw new Exception("=======    补丁清单文件不存在    =======");
         }
         int index;
         byte[] bytes = new byte[1024];
-        FileOutputStream fileOutputStream = new FileOutputStream(targetBasePath + outFileListName);
+        FileOutputStream fileOutputStream = new FileOutputStream(targetBasePath + File.separator +  outFileListName);
         while ((index = systemResourceAsStream.read(bytes)) != -1) {
             fileOutputStream.write(bytes, 0, index);
             fileOutputStream.flush();
